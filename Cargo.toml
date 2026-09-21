@@ -3,6 +3,11 @@ name = "ghostdrop"
 version = "0.3.0"
 edition = "2021"
 description = "Send a file or folder to another device. P2P, encrypted, no account. Library + CLI."
+license = "MIT"
+repository = "https://github.com/Firefares2005/ghostdrop"
+readme = "README.md"
+keywords = ["file-transfer", "p2p", "quic", "cli"]
+categories = ["command-line-utilities", "network-programming"]
 
 [features]
 default = ["cli"]
