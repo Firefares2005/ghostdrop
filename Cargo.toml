@@ -1,0 +1,31 @@
+[package]
+name = "ghostdrop"
+version = "0.3.0"
+edition = "2021"
+description = "Send a file or folder to another device. P2P, encrypted, no account. Library + CLI."
+
+[features]
+default = ["cli"]
+# Everything the terminal app needs. Turn off for library-only use
+# (e.g. mobile): cargo build --no-default-features
+cli = ["dep:clap", "dep:indicatif", "dep:qrcode"]
+
+[dependencies]
+iroh = "0.35"
+tokio = { version = "1", features = ["full"] }
+tokio-util = { version = "0.7", features = ["io-util"] }
+anyhow = "1"
+tar = "0.4"
+clap = { version = "4", features = ["derive"], optional = true }
+indicatif = { version = "0.17", optional = true }
+qrcode = { version = "0.14", default-features = false, optional = true }
+
+[[bin]]
+name = "ghostdrop"
+path = "src/main.rs"
+required-features = ["cli"]
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
