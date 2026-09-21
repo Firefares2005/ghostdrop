@@ -21,6 +21,8 @@ tokio = { version = "1", features = ["full"] }
 tokio-util = { version = "0.7", features = ["io-util"] }
 anyhow = "1"
 tar = "0.4"
+# Fix for macOS: netwatch needs socket2's `all` feature (Type::RAW)
+socket2 = { version = "0.5", features = ["all"] }
 clap = { version = "4", features = ["derive"], optional = true }
 indicatif = { version = "0.17", optional = true }
 qrcode = { version = "0.14", default-features = false, optional = true }

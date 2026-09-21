@@ -1036,13 +1036,14 @@ dependencies = [
 
 [[package]]
 name = "ghostdrop"
-version = "0.3.0"
+version = "0.3.1"
 dependencies = [
  "anyhow",
  "clap",
  "indicatif",
  "iroh",
  "qrcode",
+ "socket2 0.5.10",
  "tar",
  "tokio",
  "tokio-util",
